@@ -24,7 +24,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
       # Runs a set of commands using the runners shell
       - name: Compile C source code into .GB ROM file
         run: |
@@ -34,7 +33,6 @@ jobs:
           cd GBDK\gbdk\examples\gb\scroller
           ./compile.bat
         shell: pwsh
-      
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -49,7 +47,6 @@ jobs:
             - Second Change
           draft: false
           prerelease: false
-
         
          GITHUB_TOKEN ${{ secrets.GITHUB_TOKEN }}
       

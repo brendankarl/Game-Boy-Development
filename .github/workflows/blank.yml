@@ -35,4 +35,4 @@ jobs:
           Invoke-WebRequest -Uri https://github.com/gbdk-2020/gbdk-2020/releases/latest/download/gbdk-win.zip -Outfile GBDK.zip
           Expand-Archive GBDK.zip -DestinationPath GBDK
           echo test, and deploy your project.
-        shell: powershell
+        shell: pwsh

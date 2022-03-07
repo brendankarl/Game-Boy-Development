@@ -32,15 +32,15 @@ jobs:
           Write-Host (dir)
           cd GBDK\gbdk\examples\gb\scroller
           ./compile.bat
-          echo "RANDOM=$(Get-Date)" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
+          echo "RANDOM=$(Get-Date)" | Out-File -FilePath $Env:RANDOM -Encoding utf-8 -Append
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          tag_name: ${$random}
-          release_name: ${$random}
+          tag_name: ${{Env:RANDOM}}
+          release_name: ${{Env:RANDOM}}
           body: |
             Changes in this Release
             - First Change

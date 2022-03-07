@@ -32,7 +32,6 @@ jobs:
           Write-Host (dir)
           cd GBDK\gbdk\examples\gb\scroller
           ./compile.bat
-        shell: pwsh
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -47,7 +46,3 @@ jobs:
             - Second Change
           draft: false
           prerelease: false
-        
-         GITHUB_TOKEN ${{ secrets.GITHUB_TOKEN }}
-      
-      
